@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>TechNova Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="complex-container">
+        <header class="header">
+            <h1>TechNova Solutions</h1>
+            <nav>
+                <ul>
+                    <li><a href="#" data-modal="homeModal">Главная</a></li>
+                    <li><a href="#" data-modal="aboutModal">О нас</a></li>
+                    <li><a href="#" data-modal="servicesModal">Услуги</a></li>
+                    <li><a href="#" data-modal="contactModal">Контакты</a></li>
+                </ul>
+            </nav>
+        </header>
+        <aside class="sidebar">
+            <a href="#" data-modal="projectsModal">Проекты</a>
+            <a href="#" data-modal="casesModal">Кейсы</a>
+            <a href="#" data-modal="blogModal">Блог</a>
+            <a href="#" data-modal="careerModal">Карьера</a>
+            <a href="#" data-modal="partnersModal">Партнеры</a>
+            <a href="#" data-modal="reviewsModal">Отзывы</a>
+            <a href="#" data-modal="faqModal">FAQ</a>
+            <a href="#" data-modal="supportModal">Поддержка</a>
+        </aside>
+        <main class="content">
+            <h2>Добро пожаловать в TechNova Solutions</h2>
+            <p>Мы предлагаем передовые решения в области IT-консалтинга и разработки программного обеспечения. Наша команда экспертов готова помочь вашему бизнесу достичь новых высот.</p>
+            <button class="open-modal-btn" data-modal="homeModal">Узнать больше</button>
+
+            <div class="nested-grid">
+                <div data-modal="project1Modal">Проект 1</div>
+                <div data-modal="project2Modal">Проект 2</div>
+                <div data-modal="project3Modal">Проект 3</div>
+                <div data-modal="project4Modal">Проект 4</div>
+                <div data-modal="service1Modal">Услуга 1</div>
+                <div data-modal="service2Modal">Услуга 2</div>
+                <div data-modal="service3Modal">Услуга 3</div>
+                <div data-modal="service4Modal">Услуга 4</div>
+            </div>
+
+            <section class="statistics">
+                <h2>Наши достижения</h2>
+                <div class="chart-container">
+                    <canvas id="clientsChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="projectsChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p>&copy; 2025 TechNova Solutions. Все права защищены.</p>
+        </footer>
+    </div>
+
+    <div class="modal" id="homeModal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="homeModal">&times;</button>
+            <h3>Главная</h3>
+            <p>Добро пожаловать на сайт TechNova Solutions! Мы предоставляем полный спектр IT-услуг, от консалтинга до разработки индивидуальных решений для вашего бизнеса.</p>
+        </div>
+    </div>
+
+    <div class="modal" id="aboutModal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="aboutModal">&times;</button>
+            <h3>О нас</h3>
+            <p>TechNova Solutions — ведущая компания в области IT-консалтинга и разработки программного обеспечения. Наша миссия — предоставлять инновационные решения, которые помогают нашим клиентам расти и процветать.</p>
+            <div class="nested-grid">
+                <div data-modal="historyModal">Наша История</div>
+                <div data-modal="missionModal">Наша Миссия</div>
+                <div data-modal="teamModal">Наша Команда</div>
+                <div data-modal="valuesModal">Наши Ценности</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="servicesModal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="servicesModal">&times;</button>
+            <h3>Услуги</h3>
+            <p>Мы предлагаем широкий спектр IT-услуг, включая:</p>
+            <div class="nested-grid">
+                <div data-modal="webDevModal">Веб-разработка</div>
+                <div data-modal="graphicDesignModal">Графический Дизайн</div>
+                <div data-modal="seoModal">SEO Оптимизация</div>
+                <div data-modal="marketingModal">Маркетинговые Стратегии</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="contactModal">&times;</button>
+            <h3>Контакты</h3>
+            <p>Свяжитесь с нами через следующие каналы:</p>
+            <ul>
+                <li>Email: contact@technova.com</li>
+                <li>Телефон: +7 (123) 456-78-90</li>
+                <li>Адрес: г. Москва, ул. Примерная, д. 1</li>
+            </ul>
+            <button class="open-modal-btn" data-modal="feedbackModal">Оставить Отзыв</button>
+        </div>
+    </div>
+
+    <div class="modal" id="feedbackModal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="feedbackModal">&times;</button>
+            <h3>Оставить Отзыв</h3>
+            <form>
+                <label for="name">Имя:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="feedback">Отзыв:</label><br>
+                <textarea id="feedback" name="feedback" rows="4" required></textarea><br><br>
+                <button type="submit" class="open-modal-btn">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="projectsModal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="projectsModal">&times;</button>
+            <h3>Проекты</h3>
+            <p>Мы успешно реализовали множество проектов для различных отраслей. Вот некоторые из них:</p>
+            <ul>
+                <li>Разработка корпоративного портала для компании XYZ</li>
+                <li>Создание мобильного приложения для сервиса доставки ABC</li>
+                <li>Внедрение CRM-системы для торговой сети DEF</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="casesModal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="casesModal">&times;</button>
+            <h3>Кейсы</h3>
+            <p>Изучите наши успешные кейсы и узнайте, как мы помогли нашим клиентам достичь успеха:</p>
+            <ul>
+                <li>Увеличение продаж на 150% для компании GHI с помощью SEO</li>
+                <li>Разработка брендового сайта, который привлек более 10,000 посетителей в месяц</li>
+                <li>Оптимизация процессов бизнеса для компании JKL, что сократило издержки на 30%</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="blogModal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="blogModal">&times;</button>
+            <h3>Блог</h3>
+            <p>Читайте наши статьи и узнавайте последние тренды в мире технологий:</p>
+            <ul>
+                <li>10 Советов по улучшению UX/UI дизайна</li>
+                <li>Как выбрать правильную CRM-систему для вашего бизнеса</li>
+                <li>Будущее искусственного интеллекта в разработке ПО</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="careerModal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="careerModal">&times;</button>
+            <h3>Карьера</h3>
+            <p>Присоединяйтесь к нашей команде профессионалов и развивайтесь вместе с нами:</p>
+            <ul>
+                <li>Frontend Developer</li>
+                <li>Backend Developer</li>
+                <li>UX/UI Designer</li>
+                <li>Project Manager</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="partnersModal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="partnersModal">&times;</button>
+            <h3>Партнеры</h3>
+            <p>Мы сотрудничаем с ведущими компаниями в различных отраслях:</p>
+            <ul>
+                <li>Компания ABC - лидер в сфере e-commerce</li>
+                <li>Компания DEF - инновационные решения в области здравоохранения</li>
+                <li>Компания GHI - эксперт в области финансовых технологий</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="reviewsModal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="reviewsModal">&times;</button>
+            <h3>Отзывы</h3>
+            <div class="carousel">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <p>"TechNova Solutions помогли нам увеличить наши продажи на 200%!" - Иван Иванов, CEO компании XYZ</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <p>"Профессиональный подход и отличное качество работы." - Мария Петрова, Маркетолог компании ABC</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <p>"Сотрудничество с TechNova было настоящим удовольствием." - Алексей Смирнов, CTO компании DEF</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <p>"Инновационные решения и высокий уровень сервиса." - Ольга Смирнова, Директор по маркетингу компании GHI</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <p>"TechNova помогли нам оптимизировать процессы и сократить издержки." - Дмитрий Кузнецов, CFO компании JKL</p>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-button prev">&#10094;</button>
+                    <button class="carousel-button next">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="faqModal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="faqModal">&times;</button>
+            <h3>FAQ</h3>
+            <p>Часто задаваемые вопросы:</p>
+            <ul>
+                <li><strong>Как заказать услугу?</strong> Свяжитесь с нами через форму обратной связи или по телефону.</li>
+                <li><strong>Какие сроки выполнения проектов?</strong> Сроки зависят от сложности проекта и обсуждаются индивидуально.</li>
+                <li><strong>Какие технологии вы используете?</strong> Мы используем современные технологии, включая React, Node.js, Python и другие.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="supportModal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="supportModal">&times;</button>
+            <h3>Поддержка</h3>
+            <p>Наши специалисты готовы помочь вам 24/7. Свяжитесь с нами через следующие каналы:</p>
+            <ul>
+                <li>Телефон: +7 (123) 456-78-90</li>
+                <li>Email: support@technova.com</li>
+                <li>Чат на сайте</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="project1Modal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="project1Modal">&times;</button>
+            <h3>Проект Alpha</h3>
+            <p>Описание проекта Alpha, его цели, задачи и достигнутые результаты. Проект включал разработку корпоративного портала с интеграцией CRM-системы.</p>
+        </div>
+    </div>
+
+    <div class="modal" id="project2Modal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="project2Modal">&times;</button>
+            <h3>Проект Beta</h3>
+            <p>Описание проекта Beta, его цели, задачи и достигнутые результаты. Создание мобильного приложения для сервиса доставки ABC, что позволило увеличить клиентскую базу на 50%.</p>
+        </div>
+    </div>
+
+    <div class="modal" id="project3Modal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="project3Modal">&times;</button>
+            <h3>Проект Gamma</h3>
+            <p>Описание проекта Gamma, его цели, задачи и достигнутые результаты. Внедрение системы управления контентом для торговой сети DEF.</p>
+        </div>
+    </div>
+
+    <div class="modal" id="project4Modal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="project4Modal">&times;</button>
+            <h3>Проект Delta</h3>
+            <p>Описание проекта Delta, его цели, задачи и достигнутые результаты. Разработка платформы для онлайн-образования с поддержкой видеоконференций и интерактивных заданий.</p>
+        </div>
+    </div>
+
+    <div class="modal" id="service1Modal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="service1Modal">&times;</button>
+            <h3>Веб-разработка</h3>
+            <p>Создаем динамичные и интерактивные веб-сайты с использованием современных технологий. Наши решения включают фронтенд и бэкенд разработку, интеграцию с внешними сервисами и оптимизацию производительности.</p>
+        </div>
+    </div>
+
+    <div class="modal" id="service2Modal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="service2Modal">&times;</button>
+            <h3>Графический Дизайн</h3>
+            <p>Разрабатываем уникальные дизайны для вашего бренда, включая логотипы, баннеры, инфографику и маркетинговые материалы. Наши дизайнеры создают визуальные решения, которые выделяют ваш бизнес на рынке.</p>
+        </div>
+    </div>
+
+    <div class="modal" id="seoModal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="seoModal">&times;</button>
+            <h3>SEO Оптимизация</h3>
+            <p>Оптимизируем ваш сайт для поисковых систем, повышая его видимость и привлекая больше целевого трафика. Наши специалисты анализируют ключевые слова, улучшают структуру сайта и создают качественный контент.</p>
+        </div>
+    </div>
+
+    <div class="modal" id="marketingModal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="marketingModal">&times;</button>
+            <h3>Маркетинговые Стратегии</h3>
+            <p>Разрабатываем эффективные маркетинговые стратегии для продвижения вашего бизнеса, включая цифровой маркетинг, контент-стратегию, рекламные кампании и аналитику для достижения максимальных результатов.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modals = document.querySelectorAll('.modal');
+            const openModalButtons = document.querySelectorAll('[data-modal]');
+            const closeModalButtons = document.querySelectorAll('.modal-close');
+
+            const openModal = (modalId) => {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.classList.add('active');
+                }
+            };
+
+            const closeModal = (modalId) => {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.classList.remove('active');
+                }
+            };
+
+            openModalButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const modalId = button.getAttribute('data-modal');
+                    openModal(modalId);
+                });
+            });
+
+            closeModalButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const modalId = button.getAttribute('data-close');
+                    closeModal(modalId);
+                });
+            });
+
+            window.addEventListener('click', (e) => {
+                modals.forEach(modal => {
+                    if (e.target === modal) {
+                        modal.classList.remove('active');
+                    }
+                });
+            });
+
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    modals.forEach(modal => {
+                        modal.classList.remove('active');
+                    });
+                }
+            });
+
+            const initializeCharts = () => {
+                const ctxClients = document.getElementById('clientsChart').getContext('2d');
+                new Chart(ctxClients, {
+                    type: 'bar',
+                    data: {
+                        labels: ['2018', '2019', '2020', '2021', '2022', '2023'],
+                        datasets: [{
+                            label: 'Количество Клиентов',
+                            data: [50, 75, 100, 150, 200, 250],
+                            backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    color: '#f5f5f5'
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                ticks: {
+                                    color: '#f5f5f5'
+                                },
+                                grid: {
+                                    color: 'rgba(245, 245, 245, 0.1)'
+                                }
+                            },
+                            y: {
+                                ticks: {
+                                    color: '#f5f5f5'
+                                },
+                                grid: {
+                                    color: 'rgba(245, 245, 245, 0.1)'
+                                }
+                            }
+                        }
+                    }
+                });
+
+                const ctxProjects = document.getElementById('projectsChart').getContext('2d');
+                new Chart(ctxProjects, {
+                    type: 'line',
+                    data: {
+                        labels: ['2018', '2019', '2020', '2021', '2022', '2023'],
+                        datasets: [{
+                            label: 'Количество Проектов',
+                            data: [20, 35, 50, 80, 120, 160],
+                            fill: false,
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            tension: 0.1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    color: '#f5f5f5'
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                ticks: {
+                                    color: '#f5f5f5'
+                                },
+                                grid: {
+                                    color: 'rgba(245, 245, 245, 0.1)'
+                                }
+                            },
+                            y: {
+                                ticks: {
+                                    color: '#f5f5f5'
+                                },
+                                grid: {
+                                    color: 'rgba(245, 245, 245, 0.1)'
+                                }
+                            }
+                        }
+                    }
+                });
+
+                const ctxRevenue = document.getElementById('revenueChart').getContext('2d');
+                new Chart(ctxRevenue, {
+                    type: 'pie',
+                    data: {
+                        labels: ['Веб-разработка', 'Графический дизайн', 'SEO', 'Маркетинг'],
+                        datasets: [{
+                            label: 'Доходы',
+                            data: [40, 25, 20, 15],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.6)',
+                                'rgba(54, 162, 235, 0.6)',
+                                'rgba(255, 206, 86, 0.6)',
+                                'rgba(75, 192, 192, 0.6)'
+                            ],
+                            borderColor: [
+                                'rgba(255,99,132,1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    color: '#f5f5f5'
+                                }
+                            }
+                        }
+                    }
+                });
+            };
+
+            initializeCharts();
+
+            const carousel = document.querySelector('.carousel');
+            const track = carousel.querySelector('.carousel-track');
+            const slides = Array.from(track.children);
+            const prevButton = carousel.querySelector('.prev');
+            const nextButton = carousel.querySelector('.next');
+
+            const slideWidth = slides[0].getBoundingClientRect().width;
+
+            const setSlidePosition = (slide, index) => {
+                slide.style.left = slideWidth * index + 'px';
+            };
+
+            slides.forEach(setSlidePosition);
+
+            const moveToSlide = (track, currentSlide, targetSlide) => {
+                track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+                currentSlide.classList.remove('current-slide');
+                targetSlide.classList.add('current-slide');
+            };
+
+            slides[0].classList.add('current-slide');
+
+            prevButton.addEventListener('click', e => {
+                const currentSlide = track.querySelector('.current-slide');
+                const prevSlide = currentSlide.previousElementSibling;
+
+                if (prevSlide) {
+                    moveToSlide(track, currentSlide, prevSlide);
+                } else {
+                    moveToSlide(track, currentSlide, slides[slides.length - 1]);
+                }
+            });
+
+            nextButton.addEventListener('click', e => {
+                const currentSlide = track.querySelector('.current-slide');
+                const nextSlide = currentSlide.nextElementSibling;
+
+                if (nextSlide) {
+                    moveToSlide(track, currentSlide, nextSlide);
+                } else {
+                    moveToSlide(track, currentSlide, slides[0]);
+                }
+            });
+
+            setInterval(() => {
+                const currentSlide = track.querySelector('.current-slide');
+                let nextSlide = currentSlide.nextElementSibling;
+                if (!nextSlide) {
+                    nextSlide = slides[0];
+                }
+                moveToSlide(track, currentSlide, nextSlide);
+            }, 5000);
+
+        });
+    </script>
+
+    <script>
+    </script>
+</body>
+</html>
