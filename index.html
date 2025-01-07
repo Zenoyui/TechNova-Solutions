@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>TechNova Solutions</title>
+    <title>TechNova Solutions</title> 
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -40,7 +40,7 @@
                 <div data-modal="project3Modal">Проект 3</div>
                 <div data-modal="project4Modal">Проект 4</div>
                 <div data-modal="service1Modal">Услуга 1</div>
-                <div data-modal="service2Modal">Услуга 2</div>
+                <div data-modal="graphicDesignModal">Услуга 2</div>
                 <div data-modal="service3Modal">Услуга 3</div>
                 <div data-modal="service4Modal">Услуга 4</div>
             </div>
@@ -281,19 +281,25 @@
         </div>
     </div>
 
-    <div class="modal" id="service1Modal">
+    <div class="modal" id="graphicDesignModal">
         <div class="modal-content">
-            <button class="modal-close" data-close="service1Modal">&times;</button>
-            <h3>Веб-разработка</h3>
-            <p>Создаем динамичные и интерактивные веб-сайты с использованием современных технологий. Наши решения включают фронтенд и бэкенд разработку, интеграцию с внешними сервисами и оптимизацию производительности.</p>
-        </div>
-    </div>
-
-    <div class="modal" id="service2Modal">
-        <div class="modal-content">
-            <button class="modal-close" data-close="service2Modal">&times;</button>
+            <button class="modal-close" data-close="graphicDesignModal">&times;</button>
             <h3>Графический Дизайн</h3>
-            <p>Разрабатываем уникальные дизайны для вашего бренда, включая логотипы, баннеры, инфографику и маркетинговые материалы. Наши дизайнеры создают визуальные решения, которые выделяют ваш бизнес на рынке.</p>
+            <p>Наши услуги в области графического дизайна включают в себя:</p>
+            <ul>
+                <li><strong>Разработка логотипов:</strong> Создание уникальных и запоминающихся логотипов, отражающих суть вашего бренда.</li>
+                <li><strong>Брендинг:</strong> Полный цикл разработки фирменного стиля, включая цветовые схемы, типографику и визуальные элементы.</li>
+                <li><strong>Дизайн маркетинговых материалов:</strong> Разработка баннеров, брошюр, визитных карточек и других материалов для продвижения вашего бизнеса.</li>
+                <li><strong>Инфографика:</strong> Создание визуальных представлений данных для эффективной коммуникации с вашей аудиторией.</li>
+                <li><strong>Веб-дизайн:</strong> Разработка привлекательных и функциональных дизайнов для веб-сайтов и мобильных приложений.</li>
+            </ul>
+            <p>Наши дизайнеры используют современные инструменты и следят за последними тенденциями в дизайне, чтобы предоставить вам высококачественные и эффективные решения.</p>
+            <h4>Наши Примеры Работ:</h4>
+            <ul>
+                <li>Логотип для компании XYZ, отражающий инновационный подход и надежность.</li>
+                <li>Фирменный стиль для стартапа ABC, включая визитные карточки, брошюры и дизайн сайта.</li>
+                <li>Инфографика для отчета компании DEF, упрощающая сложные данные и делая их доступными для понимания.</li>
+            </ul>
         </div>
     </div>
 
@@ -313,242 +319,96 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const modals = document.querySelectorAll('.modal');
-            const openModalButtons = document.querySelectorAll('[data-modal]');
-            const closeModalButtons = document.querySelectorAll('.modal-close');
+    <div class="modal" id="historyModal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="historyModal">&times;</button>
+            <h3>Наша История</h3>
+            <p>TechNova Solutions была основана в 2010 году группой энтузиастов, стремящихся изменить мир технологий. С тех пор мы выросли до международной компании с сотнями довольных клиентов.</p>
+        </div>
+    </div>
 
-            const openModal = (modalId) => {
-                const modal = document.getElementById(modalId);
-                if (modal) {
-                    modal.classList.add('active');
-                }
-            };
+    <div class="modal" id="missionModal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="missionModal">&times;</button>
+            <h3>Наша Миссия</h3>
+            <p>Наша миссия — предоставлять инновационные IT-решения, которые помогают нашим клиентам достигать их бизнес-целей и повышать конкурентоспособность.</p>
+        </div>
+    </div>
 
-            const closeModal = (modalId) => {
-                const modal = document.getElementById(modalId);
-                if (modal) {
-                    modal.classList.remove('active');
-                }
-            };
+    <div class="modal" id="teamModal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="teamModal">&times;</button>
+            <h3>Наша Команда</h3>
+            <p>В нашей команде работают опытные специалисты с различными навыками, объединенные общей целью — создавать лучшие IT-решения для наших клиентов.</p>
+        </div>
+    </div>
 
-            openModalButtons.forEach(button => {
-                button.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const modalId = button.getAttribute('data-modal');
-                    openModal(modalId);
-                });
-            });
+    <div class="modal" id="valuesModal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="valuesModal">&times;</button>
+            <h3>Наши Ценности</h3>
+            <p>Мы ценим инновации, качество, прозрачность и клиенториентированность во всех аспектах нашей деятельности. Наши ценности помогают нам создавать долговременные отношения с клиентами и партнерами.</p>
+        </div>
+    </div>
 
-            closeModalButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const modalId = button.getAttribute('data-close');
-                    closeModal(modalId);
-                });
-            });
+    <div class="modal" id="service3Modal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="service3Modal">&times;</button>
+            <h3>Backend Разработка</h3>
+            <p>Наша команда специалистов по backend-разработке создает надежные и масштабируемые серверные решения для ваших приложений. Мы работаем с различными технологиями и фреймворками, включая Node.js, Python, Ruby on Rails и другие.</p>
+            <ul>
+                <li><strong>Разработка API:</strong> Создание эффективных и безопасных API для интеграции с фронтендом и другими сервисами.</li>
+                <li><strong>Базы Данных:</strong> Проектирование и оптимизация баз данных для обеспечения высокой производительности и надежности.</li>
+                <li><strong>Интеграции:</strong> Внедрение сторонних сервисов и систем для расширения функциональности ваших приложений.</li>
+                <li><strong>Безопасность:</strong> Реализация современных методов обеспечения безопасности данных и предотвращения угроз.</li>
+            </ul>
+            <p>Мы стремимся к тому, чтобы ваши приложения были не только функциональными, но и устойчивыми к нагрузкам, обеспечивая бесперебойную работу вашего бизнеса.</p>
+        </div>
+    </div>
 
-            window.addEventListener('click', (e) => {
-                modals.forEach(modal => {
-                    if (e.target === modal) {
-                        modal.classList.remove('active');
-                    }
-                });
-            });
+    <div class="modal" id="service4Modal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="service4Modal">&times;</button>
+            <h3>Контент-маркетинг</h3>
+            <p>Мы помогаем вам создавать и распространять ценный контент, который привлекает и удерживает вашу целевую аудиторию. Наши стратегии контент-маркетинга направлены на увеличение узнаваемости бренда, улучшение SEO и повышение вовлеченности пользователей.</p>
+            <ul>
+                <li><strong>Создание Контента:</strong> Разработка качественных статей, блогов, видео, инфографики и других материалов, соответствующих вашим бизнес-целям.</li>
+                <li><strong>Стратегия Распространения:</strong> Определение наиболее эффективных каналов для распространения контента, включая социальные сети, email-маркетинг и партнерские площадки.</li>
+                <li><strong>SEO Оптимизация:</strong> Оптимизация контента для поисковых систем с целью повышения видимости и привлечения органического трафика.</li>
+                <li><strong>Аналитика и Отчеты:</strong> Мониторинг эффективности контент-стратегии и предоставление подробных отчетов для дальнейшего улучшения.</li>
+            </ul>
+            <p>Наш подход к контент-маркетингу помогает вам установить доверительные отношения с клиентами, повысить лояльность и стимулировать рост вашего бизнеса.</p>
+        </div>
+    </div>
 
-            window.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    modals.forEach(modal => {
-                        modal.classList.remove('active');
-                    });
-                }
-            });
+    <div class="modal" id="webDevModal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="webDevModal">&times;</button>
+            <h3>Веб-разработка</h3>
+            <p>Мы предлагаем комплексные услуги по веб-разработке, которые включают в себя:</p>
+            <ul>
+                <li><strong>Разработка сайтов:</strong> Создание адаптивных и функциональных веб-сайтов, соответствующих вашим бизнес-целям.</li>
+                <li><strong>E-commerce решения:</strong> Разработка онлайн-магазинов с интеграцией платежных систем и управлением товарами.</li>
+                <li><strong>Веб-приложения:</strong> Создание сложных веб-приложений с использованием современных технологий и фреймворков.</li>
+                <li><strong>Поддержка и сопровождение:</strong> Обеспечение технической поддержки и регулярного обновления ваших веб-решений.</li>
+            </ul>
+            <p>Наша команда использует передовые технологии, такие как HTML5, CSS3, JavaScript, React, Angular, Node.js и другие, чтобы предоставить вам высококачественные и эффективные веб-решения, которые помогут вашему бизнесу расти и процветать.</p>
+        </div>
+    </div>
 
-            const initializeCharts = () => {
-                const ctxClients = document.getElementById('clientsChart').getContext('2d');
-                new Chart(ctxClients, {
-                    type: 'bar',
-                    data: {
-                        labels: ['2018', '2019', '2020', '2021', '2022', '2023'],
-                        datasets: [{
-                            label: 'Количество Клиентов',
-                            data: [50, 75, 100, 150, 200, 250],
-                            backgroundColor: 'rgba(255, 99, 132, 0.6)',
-                            borderColor: 'rgba(255, 99, 132, 1)',
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                labels: {
-                                    color: '#f5f5f5'
-                                }
-                            }
-                        },
-                        scales: {
-                            x: {
-                                ticks: {
-                                    color: '#f5f5f5'
-                                },
-                                grid: {
-                                    color: 'rgba(245, 245, 245, 0.1)'
-                                }
-                            },
-                            y: {
-                                ticks: {
-                                    color: '#f5f5f5'
-                                },
-                                grid: {
-                                    color: 'rgba(245, 245, 245, 0.1)'
-                                }
-                            }
-                        }
-                    }
-                });
-
-                const ctxProjects = document.getElementById('projectsChart').getContext('2d');
-                new Chart(ctxProjects, {
-                    type: 'line',
-                    data: {
-                        labels: ['2018', '2019', '2020', '2021', '2022', '2023'],
-                        datasets: [{
-                            label: 'Количество Проектов',
-                            data: [20, 35, 50, 80, 120, 160],
-                            fill: false,
-                            borderColor: 'rgba(54, 162, 235, 1)',
-                            tension: 0.1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                labels: {
-                                    color: '#f5f5f5'
-                                }
-                            }
-                        },
-                        scales: {
-                            x: {
-                                ticks: {
-                                    color: '#f5f5f5'
-                                },
-                                grid: {
-                                    color: 'rgba(245, 245, 245, 0.1)'
-                                }
-                            },
-                            y: {
-                                ticks: {
-                                    color: '#f5f5f5'
-                                },
-                                grid: {
-                                    color: 'rgba(245, 245, 245, 0.1)'
-                                }
-                            }
-                        }
-                    }
-                });
-
-                const ctxRevenue = document.getElementById('revenueChart').getContext('2d');
-                new Chart(ctxRevenue, {
-                    type: 'pie',
-                    data: {
-                        labels: ['Веб-разработка', 'Графический дизайн', 'SEO', 'Маркетинг'],
-                        datasets: [{
-                            label: 'Доходы',
-                            data: [40, 25, 20, 15],
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.6)',
-                                'rgba(54, 162, 235, 0.6)',
-                                'rgba(255, 206, 86, 0.6)',
-                                'rgba(75, 192, 192, 0.6)'
-                            ],
-                            borderColor: [
-                                'rgba(255,99,132,1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)'
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                labels: {
-                                    color: '#f5f5f5'
-                                }
-                            }
-                        }
-                    }
-                });
-            };
-
-            initializeCharts();
-
-            const carousel = document.querySelector('.carousel');
-            const track = carousel.querySelector('.carousel-track');
-            const slides = Array.from(track.children);
-            const prevButton = carousel.querySelector('.prev');
-            const nextButton = carousel.querySelector('.next');
-
-            const slideWidth = slides[0].getBoundingClientRect().width;
-
-            const setSlidePosition = (slide, index) => {
-                slide.style.left = slideWidth * index + 'px';
-            };
-
-            slides.forEach(setSlidePosition);
-
-            const moveToSlide = (track, currentSlide, targetSlide) => {
-                track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
-                currentSlide.classList.remove('current-slide');
-                targetSlide.classList.add('current-slide');
-            };
-
-            slides[0].classList.add('current-slide');
-
-            prevButton.addEventListener('click', e => {
-                const currentSlide = track.querySelector('.current-slide');
-                const prevSlide = currentSlide.previousElementSibling;
-
-                if (prevSlide) {
-                    moveToSlide(track, currentSlide, prevSlide);
-                } else {
-                    moveToSlide(track, currentSlide, slides[slides.length - 1]);
-                }
-            });
-
-            nextButton.addEventListener('click', e => {
-                const currentSlide = track.querySelector('.current-slide');
-                const nextSlide = currentSlide.nextElementSibling;
-
-                if (nextSlide) {
-                    moveToSlide(track, currentSlide, nextSlide);
-                } else {
-                    moveToSlide(track, currentSlide, slides[0]);
-                }
-            });
-
-            setInterval(() => {
-                const currentSlide = track.querySelector('.current-slide');
-                let nextSlide = currentSlide.nextElementSibling;
-                if (!nextSlide) {
-                    nextSlide = slides[0];
-                }
-                moveToSlide(track, currentSlide, nextSlide);
-            }, 5000);
-
-        });
-    </script>
-
-    <script>
-    </script>
+    <div class="modal" id="service1Modal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="service1Modal">&times;</button>
+            <h3>Услуга 1: IT Консалтинг</h3>
+            <p>Наши услуги по IT-консалтингу включают анализ текущих бизнес-процессов, разработку стратегии цифровой трансформации и внедрение современных технологий, которые помогут вашему бизнесу расти и эффективно функционировать.</p>
+            <ul>
+                <li><strong>Анализ и оценка:</strong> Оценка текущих ИТ-систем и бизнес-процессов.</li>
+                <li><strong>Разработка стратегии:</strong> Создание плана цифровой трансформации.</li>
+                <li><strong>Внедрение технологий:</strong> Реализация современных ИТ-решений для повышения эффективности.</li>
+                <li><strong>Поддержка и сопровождение:</strong> Постоянная поддержка для обеспечения стабильной работы систем.</li>
+            </ul>
+        </div>
+    </div>
+    <script src="index.js"></script>
 </body>
 </html>
